@@ -9,6 +9,8 @@ import 'package:iconify_flutter/icons/material_symbols.dart';
 import 'package:iconify_flutter/icons/mdi.dart';
 import 'package:pn_fl_foody_user/screens/screens.dart';
 import 'package:pn_fl_foody_user/theme/theme.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -18,6 +20,30 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
+   String _username = ""; // Valor por defecto
+
+
+
+   @override
+  void initState() {
+  super.initState();
+  _loadUserData(); // Llamamos a la función aquí
+}
+
+    void _loadUserData() async {
+    
+  User? user = FirebaseAuth.instance.currentUser;
+  if (user != null) {
+    // Obtener el nombre de usuario desde Firestore
+    DocumentSnapshot snapshot = await FirebaseFirestore.instance.collection('users').doc(user.uid).get();
+    String username = snapshot['username'];  // Asegúrate de que el campo 'username' exista en Firestore
+    
+    setState(() {
+      _username = username;
+    });
+  }
+}
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -239,17 +265,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text(
-                "Perry Piterson",
+              Text(
+                "$_username",
                 style: semibold16Black,
                 overflow: TextOverflow.ellipsis,
               ),
-              heightBox(3.0),
-              const Text(
-                "+91 9758462548",
-                style: medium14Grey,
-                overflow: TextOverflow.ellipsis,
-              )
             ],
           ),
         ),
@@ -277,3 +297,4 @@ class _ProfileScreenState extends State<ProfileScreen> {
     );
   }
 }
+
