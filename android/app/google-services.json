@@ -1,0 +1,67 @@
+{
+  "project_info": {
+    "project_number": "1010587351277",
+    "project_id": "foodwheelsfast-c2fcd",
+    "storage_bucket": "foodwheelsfast-c2fcd.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1010587351277:android:4adfdd9fa3e6ca5a58f4e4",
+        "android_client_info": {
+          "package_name": "com.example.foodwheels_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAUQoU59XFPTTXGscVClCPSLMGdZp4L9Ac"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1010587351277:android:4debfe8a3dc1815f58f4e4",
+        "android_client_info": {
+          "package_name": "com.example.pn_fl_foody_delivery"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAUQoU59XFPTTXGscVClCPSLMGdZp4L9Ac"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1010587351277:android:a4c9e4d7c8ea3ebb58f4e4",
+        "android_client_info": {
+          "package_name": "com.example.pn_fl_foody_user"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAUQoU59XFPTTXGscVClCPSLMGdZp4L9Ac"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
